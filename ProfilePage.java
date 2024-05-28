@@ -1,3 +1,4 @@
+import org.jetbrains.annotations.NotNull;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -9,7 +10,7 @@ public class ProfilePage extends JFrame {
     private JLabel phoneLabel;
     private JLabel addressLabel;
 
-    public ProfilePage(User user) {
+    public ProfilePage(@NotNull User user) {
         setTitle("Profile");
         setSize(600, 400); // Increased screen size
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -22,8 +23,8 @@ public class ProfilePage extends JFrame {
         emailLabel = new JLabel("Email: " + user.getEmail());
         phoneLabel = new JLabel("Phone: " + user.getPhoneNumber());
         addressLabel = new JLabel("Address: " + user.getAddress());
-
-        profilePanel.add(new JLabel()); // Empty label for spacing
+        profilePanel.setBackground(new Color(8, 234, 234));
+        profilePanel.add(new JLabel());
         profilePanel.add(new JLabel());
         profilePanel.add(nameLabel);
         profilePanel.add(emailLabel);

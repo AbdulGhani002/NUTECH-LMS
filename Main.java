@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 import java.sql.*;
 
 public class Main extends JFrame {
+    @org.jetbrains.annotations.Nullable
     private User authenticateUser(String username, String password) {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -48,7 +49,7 @@ public class Main extends JFrame {
     }
 
     public Main() {
-        setTitle("NUTECH LMS Login");
+        setTitle("NUTECH SMS Login");
         setSize(400, 300);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
@@ -57,7 +58,7 @@ public class Main extends JFrame {
 
         JPanel loginPanel = new JPanel(new GridLayout(3, 2, 10, 10));
         loginPanel.setBorder(BorderFactory.createEmptyBorder(30, 30, 30, 30));
-
+        loginPanel.setBackground(new Color(8, 234, 234));
         JLabel usernameLabel = new JLabel("Username:");
         JTextField usernameField = new JTextField();
 

@@ -36,7 +36,7 @@ public class CreateAccount extends JFrame {
 
         JButton createAccountButton = new JButton("Create Account");
         JButton loginButton = new JButton("Login");
-
+        signupPanel.setBackground(new Color(8, 234, 234));
         signupPanel.add(usernameLabel);
         signupPanel.add(usernameField);
         signupPanel.add(passwordLabel);

@@ -1,3 +1,5 @@
+import org.jetbrains.annotations.NotNull;
+
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
@@ -8,7 +10,7 @@ import java.sql.*;
 public class GradesPage extends JFrame {
     private JTable gradesTable;
 
-    public GradesPage(User user) {
+    public GradesPage(@NotNull User user) {
         setTitle("Grades");
         setSize(800, 600);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -27,7 +29,6 @@ public class GradesPage extends JFrame {
 
         JScrollPane scrollPane = new JScrollPane(gradesTable);
         add(scrollPane, BorderLayout.CENTER);
-
         fetchAndCalculateGrades(user);
 
         JButton backButton = new JButton("Back");

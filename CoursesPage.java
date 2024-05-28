@@ -1,3 +1,5 @@
+import org.jetbrains.annotations.NotNull;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -11,7 +13,7 @@ public class CoursesPage extends JFrame {
     private DefaultListModel<String> availableCoursesModel;
     private User user;
 
-    public CoursesPage(User user) {
+    public CoursesPage(@NotNull User user) {
         this.user = user;
         setTitle("Courses");
         setSize(800, 600);
@@ -33,7 +35,7 @@ public class CoursesPage extends JFrame {
 
         JPanel listsPanel = new JPanel(new GridLayout(1, 2, 10, 10));
         listsPanel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
-
+        listsPanel.setBackground(new Color(8, 234, 234));
         JPanel enrolledPanel = new JPanel(new BorderLayout());
         enrolledPanel.add(new JLabel("Enrolled Courses:"), BorderLayout.NORTH);
         enrolledPanel.add(new JScrollPane(enrolledCoursesList), BorderLayout.CENTER);

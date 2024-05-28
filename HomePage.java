@@ -21,7 +21,7 @@ public class HomePage extends JFrame {
 
         JPanel homePage = new JPanel(new GridLayout(10, 1, 10, 10));
         homePage.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
-
+        homePage.setBackground(new Color(8, 234, 234));
         JLabel welcomeLabel = new JLabel("Welcome " + user.getUsername() + "!");
         welcomeLabel.setHorizontalAlignment(SwingConstants.CENTER);
         homePage.add(welcomeLabel);
