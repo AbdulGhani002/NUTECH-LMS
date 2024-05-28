@@ -12,7 +12,7 @@ public class ProfilePage extends JFrame {
 
     public ProfilePage(@NotNull User user) {
         setTitle("Profile");
-        setSize(600, 400); // Increased screen size
+        setSize(600, 400);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
 
@@ -35,7 +35,8 @@ public class ProfilePage extends JFrame {
         editButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(ProfilePage.this, "Editing profile is not implemented yet.", "Not Implemented", JOptionPane.INFORMATION_MESSAGE);
+                new EditProfile(user);
+                dispose();
             }
         });
 
