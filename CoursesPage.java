@@ -91,7 +91,7 @@ public class CoursesPage extends JFrame {
             String dbPassword = "12345";
             Connection connection = DriverManager.getConnection(url, dbUsername, dbPassword);
 
-            // Load enrolled courses
+
             String enrolledQuery = "SELECT course_name FROM courses c JOIN enrollments e ON c.course_id = e.course_id WHERE e.user_id = ?";
             PreparedStatement enrolledStatement = connection.prepareStatement(enrolledQuery);
             enrolledStatement.setInt(1, user.getUserId());

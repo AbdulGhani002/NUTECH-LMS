@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 import java.sql.*;
 
 public class Main extends JFrame {
-    @org.jetbrains.annotations.Nullable
+
     private User authenticateUser(String username, String password) {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -15,7 +15,7 @@ public class Main extends JFrame {
             String dbPassword = "12345";
             Connection connection = DriverManager.getConnection(url, dbUsername, dbPassword);
 
-            String query = "SELECT user_id, username, email, phone_number, address FROM users WHERE username = ? AND password = ?";
+            String query = "SELECT user_id, username, email, phone_number, address, is_admin FROM users WHERE username = ? AND password = ?";
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setString(1, username);
             statement.setString(2, password);
@@ -28,14 +28,9 @@ public class Main extends JFrame {
                 String email = resultSet.getString("email");
                 String phoneNumber = resultSet.getString("phone_number");
                 String address = resultSet.getString("address");
+                boolean isAdmin = resultSet.getBoolean("is_admin");
 
-                User user = new User(userId, userUsername, email, phoneNumber, address);
-
-                resultSet.close();
-                statement.close();
-                connection.close();
-
-                return user;
+                return new User(userId, userUsername, email, phoneNumber, address, isAdmin);
             }
 
             resultSet.close();
@@ -87,7 +82,11 @@ public class Main extends JFrame {
                     JOptionPane.showMessageDialog(Main.this, "Login successful!", "Success",
                             JOptionPane.INFORMATION_MESSAGE);
 
-                    new HomePage(user);
+                    if (user.isAdmin()) {
+                        new AdminHomePage(user);
+                    } else {
+                        new HomePage(user);
+                    }
                     dispose();
                 } else {
                     JOptionPane.showMessageDialog(Main.this, "Invalid username or password.", "Error",
