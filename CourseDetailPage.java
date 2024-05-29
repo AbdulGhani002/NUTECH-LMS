@@ -24,6 +24,7 @@ public class CourseDetailPage extends JFrame {
         JPanel detailsPanel = new JPanel(new GridLayout(2, 1));
         JLabel nameLabel = new JLabel("Name: " + courseName);
         detailsPanel.add(nameLabel);
+        detailsPanel.setBackground(new Color(8, 234, 234));
         add(detailsPanel, BorderLayout.CENTER);
 
         setVisible(true);

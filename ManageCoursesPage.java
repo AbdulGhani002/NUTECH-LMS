@@ -24,7 +24,7 @@ public class ManageCoursesPage extends JFrame {
 
         coursesPanel = new JPanel();
         coursesPanel.setLayout(new BoxLayout(coursesPanel, BoxLayout.Y_AXIS));
-
+        coursesPanel.setBackground(new Color(8, 234, 234));
         loadCoursesFromDatabase(coursesPanel);
 
         add(new JScrollPane(coursesPanel), BorderLayout.CENTER);

@@ -18,8 +18,8 @@ public class AdminHomePage extends JFrame {
 
         JPanel adminPage = new JPanel(new GridLayout(10, 1, 10, 10));
         adminPage.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
-        adminPage.setBackground(new Color(234, 8, 8));
-        JButton manageUsersButton = new JButton("Manage Users");
+        adminPage.setBackground(new Color(8, 234, 234));
+        JButton manageUsersButton = new JButton("Manage Students");
         JButton manageCoursesButton = new JButton("Manage Courses");
         JButton manageGradesButton = new JButton("Manage Grades");
         JButton viewReportsButton = new JButton("View Reports");

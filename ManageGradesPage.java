@@ -8,7 +8,6 @@ public class ManageGradesPage extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
-        // Set layout and add components
         setLayout(new BorderLayout());
 
         JLabel titleLabel = new JLabel("Grade Management", SwingConstants.CENTER);
@@ -17,8 +16,7 @@ public class ManageGradesPage extends JFrame {
 
         JPanel gradesPanel = new JPanel();
         gradesPanel.setLayout(new BoxLayout(gradesPanel, BoxLayout.Y_AXIS));
-
-        // Placeholder content
+        gradesPanel.setBackground(new Color(8, 234, 234));
         JLabel gradeLabel1 = new JLabel("Course 1: Student Grades");
         JLabel gradeLabel2 = new JLabel("Course 2: Student Grades");
 
